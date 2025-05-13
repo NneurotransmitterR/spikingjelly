@@ -2398,7 +2398,7 @@ class GatedLIFNode(base.MemoryModule):
 
     @property
     def supported_backends(self):
-        return 'torch'
+        return ('torch',)
 
     def extra_repr(self):
         with torch.no_grad():
@@ -2532,7 +2532,7 @@ class DSRIFNode(base.MemoryModule):
 
     @property
     def supported_backends(self):
-        return 'torch'
+        return ('torch',)
 
     def extra_repr(self):
         with torch.no_grad():
@@ -2707,7 +2707,7 @@ class DSRLIFNode(base.MemoryModule):
 
     @property
     def supported_backends(self):
-        return 'torch'
+        return ('torch',)
 
     def extra_repr(self):
         with torch.no_grad():
@@ -2902,7 +2902,7 @@ class OTTTLIFNode(LIFNode):
     @property
     def supported_backends(self):
         if self.step_mode == 's':
-            return ('torch')
+            return ('torch',)
         else:
             raise ValueError(self.step_mode)
 
@@ -3083,7 +3083,7 @@ class SLTTLIFNode(LIFNode):
     @property
     def supported_backends(self):
         if self.step_mode == 's':
-            return ('torch')
+            return ('torch',)
         else:
             raise ValueError(self.step_mode)
 
@@ -4120,7 +4120,7 @@ class MPBNLIFNode(MPBNBaseNode):
     
     @property
     def supported_backends(self):
-        return ('torch')
+        return ('torch',)
 
     def pre_charge(self, x: torch.Tensor):
         if self.decay_input:
